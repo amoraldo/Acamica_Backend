@@ -3,7 +3,7 @@ const productos = require('../models/productos')
 
 function validar_indice(req,res,next){
     console.log("paso por middleware")
-    if(productos.length >= req.body.indice){
+    if(productos.length >= parseInt(req.body.indice)){
         console.log("Existe")
         next()
     }else{
