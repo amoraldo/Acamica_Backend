@@ -13,5 +13,21 @@
     "nodemon": "^2.0.12",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoraldo/Acamica_Backend.git"
+  },
+  "keywords": [
+    "API",
+    "express",
+    "npm",
+    "swagger",
+    "acamica"
+  ],
+  "bugs": {
+    "url": "https://github.com/amoraldo/Acamica_Backend/issues"
+  },
+  "homepage": "https://github.com/amoraldo/Acamica_Backend#readme"
 }

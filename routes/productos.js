@@ -41,7 +41,7 @@
     })
   router.delete('/', validar_indice, function (req, res) {
     productos.splice(req.body.indice,1);
-    res.send('Producto Eliminado')
+    res.send('Producto Eliminado') 
     })
   
-    module.exports = router;
+    module.exports = router; 

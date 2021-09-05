@@ -1,29 +1,29 @@
-const usuarios=[
+const usuarios=[ //usuario, nombre_apellido, email, telefono, direccion, contraseña
     {
-        "nombre" : "Isabella",
-        "apellido" : "Moraldo",
+        "usuario": "isamoraldo",
+        "nombre_apellido" : "Isabella Moraldo",
         "direccion": "Pasaje Azcuenaga 1636. Rio Grande. CP9420. Argentina",
+        "telefono": "2964619698",
         "email" : "isalindamoraldo@gmail.com",
-        "edad" : 8,
         "password" : "Isabella1212",
         "admin" : false
     },
     {
-        "nombre" : "Andres",
-        "apellido" : "Moraldo",
+        "usuario": "amoraldo",
+        "nombre_apellido" : "Andres Moraldo",
         "direccion": "Pasaje Azcuenaga 1636. Rio Grande. CP9420. Argentina",
+        "telefono": "2964619698",
         "email" : "amoraldo@gmail.com",
-        "edad" : 40,
         "password" : "andres@1212",
         "admin" : true
     },
     {
-        "nombre" : "Juan",
-        "apellido" : "Villanueva",
+        "usuario": "villa1255",
+        "nombre_apellido" : "Juan Villanueva",
         "direccion": "Estrada 1822. Rio Grande. CP9420. Argentina",
+        "telefono": "2964152266",
         "email" : "Villa1842@hotmail.com",
-        "edad" : 51,
-        "password" : "1212alpha",
+        "password" : "1212alpha", 
         "admin" : false
     }
 ];
