@@ -1,13 +1,13 @@
 const usuarios = require('../models/usuarios')
 
+
 function validar_admin(req,res,next){
   console.log("paso por validar_admin")
-  console.log(typeof((req.body.indice)))
   if(!
     ("indice" in req.body) || 
     (req.body.indice.length === 0) || 
     (typeof(req.body.indice) !== "number") ||
-    (req.body.indice >= usuarios.length - 1))
+    (req.body.indice > usuarios.length - 1))
     {
     return res.status(500).json({"mensaje" : "Parametros Incorrectos"});
   }
@@ -15,25 +15,38 @@ function validar_admin(req,res,next){
     req.admin = usuarios[req.body.indice].admin
     next()
   }
-  /*  if (usuarios[req.body.indice].admin==true){
-      req.admin = true
-      next()
-    }
-    else{
-      req.admin = false
-//      return res.status(500).json({"mensaje" : "No permitido"})
-    }
-*/
 }
-module.exports = validar_admin
-/*
+
 function validar_usuario(req,res,next){
   console.log("paso por validar_usuario")
   next()
 }
-module.exports = validar_usuario
-*/
-function validar_registro(req,res,next){
+
+function validar_login(req,res,next){
+  console.log("paso por validar_login")
+  req.indice = false
+  if(!("usuario_email" in req.body && "password" in req.body)){
+    return res.status(500).json({"mensaje" : "Debe completar todos los campos"});
+  }
+  if(req.body.usuario_email.length === 0 || req.body.password.length === 0){
+    return res.status(500).json({"mensaje" : "Debe completar todos los campos"});
+  }
+  for(let element in usuarios){
+    if ((req.body.usuario_email == usuarios[element].usuario || req.body.usuario_email == usuarios[element].email) &&
+       (req.body.password == usuarios[element].password))
+    {
+      req.indice = element
+      break
+    }
+  }
+  if (req.indice != false){
+    next()
+  }else{
+    return res.status(500).json({"mensaje" : "Los datos de usuario/email y contraseña no coinciden"})
+  }
+}
+
+function validar_registro(req, res, next){
   console.log("paso por validar_registro")
   // Verificacion que existan los campos: usuario, nombre_apellido, email, telefono, direccion, contraseña
   if(!("usuario" in req.body &&
@@ -84,6 +97,4 @@ function validar_registro(req,res,next){
   }
   next()
 }
-//module.exports = { validar_registro, validar_admin, validar_registro }
-module.exports = validar_registro 
-
+module.exports = { validar_admin, validar_usuario, validar_login, validar_registro }
