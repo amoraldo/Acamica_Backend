@@ -29,11 +29,27 @@ const { validar_admin, validar_usuario, validar_login, validar_registro } = requ
     res.send('usuario Creado')
   })
 
-  router.put('/', validar_admin, validar_usuario, function (req, res) { //actualizar usuario
+  router.put('/', validar_admin, function (req, res) { //actualizar usuario
+  // Aun no implementada
     console.log("put /usuarios/")
-    usuarios[req.body.indice].nombre_apellido = req.body.nombre;
-    usuarios[req.body.indice].email = req.body.email;
-    usuarios[req.body.indice].password = req.body.password;
+    if("nombre_apellido" in req.body && req.body.nombre_apellido.length != 0){
+      usuarios[req.body.indice].nombre_apellido = req.body.nombre_apellido;
+    }
+    if("usuario" in req.body && req.body.usuario.length != 0){
+      usuarios[req.body.indice].usuario = req.body.usuario;
+    }
+    if("direccion" in req.body && req.body.direccion.length != 0){
+      usuarios[req.body.indice].direccion = req.body.direccion;
+    }
+    if("email" in req.body && req.body.email.length != 0){
+      usuarios[req.body.indice].email = req.body.email;
+    }
+    if("password" in req.body && req.body.password.length != 0){
+      usuarios[req.body.indice].password = req.body.password;
+    }
+    if("telefono" in req.body && req.body.telefono.length != 0){
+      usuarios[req.body.indice].telefono = req.body.telefono;
+    }
     res.send('Usuario Actualizado')
   })
 
