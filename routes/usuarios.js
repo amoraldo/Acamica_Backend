@@ -5,25 +5,21 @@ const usuarios = require('../models/usuarios');
 const { validar_admin, validar_usuario, validar_login, validar_registro } = require("../middlewares/usuarios");
   
 
-  router.get('/',validar_admin,  function (req, res) {  // datos de usuario, solo como admin
+  router.get('/', validar_admin,  function (req, res) {  // datos de usuario, solo como admin
     console.log("get /usuarios/")
-    if(req.admin){
       res.status(200).json({usuarios})
-    }
-    else{
-      res.send('Restringido')
-    }
   })
 
+  
   router.post('/login/', validar_login, function(req,res){ // login
     console.log("post /usuarios/login")
-    if(req.indice != false){
-      res.status(200).json({"indice" : req.indice})
+    if(req.body.id != false){
+      res.status(200).json({"id" : req.body.id})
     }
   })
-  
-  router.post('/', validar_registro, function (req, res) {  // crear un usuario
-    console.log("post /usuarios/")
+   // crear un usuario
+  router.post('/', validar_registro, function (req, res) { 
+    console.log("post /usuarios")
     usuarios.push(req.body)
     usuarios[(usuarios.length)-1].admin = false;
     res.send('usuario Creado')
@@ -31,7 +27,7 @@ const { validar_admin, validar_usuario, validar_login, validar_registro } = requ
 
   router.put('/', validar_admin, function (req, res) { //actualizar usuario
   // Aun no implementada
-    console.log("put /usuarios/")
+    console.log("put /usuarios")
     if("nombre_apellido" in req.body && req.body.nombre_apellido.length != 0){
       usuarios[req.body.indice].nombre_apellido = req.body.nombre_apellido;
     }
@@ -54,9 +50,9 @@ const { validar_admin, validar_usuario, validar_login, validar_registro } = requ
   })
 
   router.delete('/', validar_admin, function (req, res) {  // eliminar un usuario
-    console.log("delete /usuarios/")
+    console.log("delete /usuarios")
     usuarios.splice(req.body.indice,1);
-    res.send('Usuario Eliminado')  
+    res.send('Usuario Eliminado')
   })
   
-  module.exports = router;
+  module.exports = router ;

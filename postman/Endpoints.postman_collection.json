@@ -37,7 +37,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"indice\" : 1\n}",
+					"raw": "{\n    \"id\" : 2\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,7 +90,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\n        \"usuario\": \"destrada\",\n        \"nombre_apellido\" : \"Diego Estrada\",\n        \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n        \"telefono\": \"2964123456\",\n        \"email\" : \"destrada@gmail.com\",\n        \"password\" : \"password111\"\n    }",
+					"raw": "    {\n        \"indice\": 3,\n        \"usuario\": \"destrada\",\n        \"nombre_apellido\" : \"Diego Estrada\",\n        \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n        \"telefono\": \"2964123456\",\n        \"email\" : \"destrada@gmail.com\",\n        \"password\" : \"password111\"\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -245,7 +245,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario\": \"destrad2da\",\n        \"nombre_apellido\" : \"Diego Estrada\",\n        \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n        \"telefono\": \"2964123456\",\n        \"email\" : \"de1strad1a@gmail.com\",\n        \"password\" : \"password111\",\n        \"repass\" : \"password111\"\n    }",
+					"raw": "{\n    \"id\": \"12\",\n    \"usuario\": \"diego3\",\n    \"nombre_apellido\" : \"Diego Estrada\",\n    \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n    \"telefono\": \"2964123456\",\n    \"email\" : \"diego2@g3mail.com\",\n    \"password\" : \"password111\",\n    \"repass\" : \"password111\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

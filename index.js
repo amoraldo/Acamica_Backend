@@ -1,9 +1,7 @@
 
 
-
-
 const express = require('express');
-//const morgan = require('morgan');
+const config = require('./config.js');
 
 //Swagger
 const swaggerJsDoc = require('swagger-jsdoc');
@@ -13,19 +11,22 @@ const swaggerOptions = {
   swaggerDefinition: {
     info: {
       title: 'Acamica API',
-      version: '1.0.0'
+      version: '1.0.0'//,
+    //  Autor: 'Moraldo Andres'
     }
   },
-  apis: ['./src/index.js', 
+  apis: [
+    './info.js',
+    './index.js', 
     './routes/usuarios.js', 
     './routes/productos.js'],
+
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // inicializacion del server
 const app = express();
 app.use(express.json());
-//app.use(morgan('dev'));
 
 app.use('/api-docs',
    swaggerUI.serve,
@@ -38,19 +39,14 @@ app.use('/usuarios', usuarios);
 var productos = require('./routes/productos');
 app.use('/productos', productos);
 
-/**
- * @swagger
- * /:
- *  get:
- *    summary: Hello World
- *    description: Envia un mensaje de SOS
- *    responses:
- *       200:
- *         description: Hello World
- */
+
 app.get('/', function (req, res) {
-    res.send('Hello World')
+    res.send(`Resto dev v${config.version}`)
   })
 
-app.listen(3000) 
+console.log(`Titulo: ${config.title}`);
+console.log(`Autor: ${config.autor}\n`);
+app.listen(config.port, function(){
+  console.log(`Escuchando por puerto ${config.port}`)
+}) 
 
