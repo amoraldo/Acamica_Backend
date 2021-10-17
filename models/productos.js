@@ -1,6 +1,6 @@
 const productos=[
     {
-        "id" : 1,
+        "p_id" : 1,
         "nombre" : "Irrespetuosa",
         "categoria" : "hamburguesa",
         "detalle" : "Doble medallones Caseros de 120g, doble queso cheddar",
@@ -8,7 +8,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 3,
+        "p_id" : 3,
         "nombre" : "Irrespetuosa",
         "categoria" : "hamburguesa",
         "detalle" : "Triple medallones Caseros de 120g, doble queso cheddar",
@@ -16,7 +16,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 20,
+        "p_id" : 20,
         "nombre" : "Tributo Big Mac",
         "categoria" : "hamburguesa",
         "detalle" : "Doble Carne, Cheddar, Lechuga, Pepinillos agridulces, Salsa Big Mac",
@@ -24,7 +24,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 23,
+        "p_id" : 23,
         "nombre" : "Coca Cola 500ml",
         "categoria" : "gaseosa",
         "detalle" : "Coca Cola medio litro plastico",
@@ -32,7 +32,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 25,
+        "p_id" : 25,
         "nombre" : "Mozzarella",
         "categoria" : "pizza",
         "detalle" : "Salsa de tomate, Mozzarella, Olivas negras",
@@ -40,7 +40,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 26,
+        "p_id" : 26,
         "nombre" : "Provenzal",
         "categoria" : "pizza",
         "detalle" : "Salsa de tomate, Mozzarella, Ajo y Perejil, Olivas verdes",
@@ -48,7 +48,7 @@ const productos=[
         "disponible": false
     },   
     {
-        "id" : 27,
+        "p_id" : 27,
         "nombre" : "Especial",
         "categoria" : "pizza",
         "detalle" : "Salsa de tomates, Mozzarella, Jamón, Morrones, Huevos, Olivas verdes, Orégano",
@@ -56,7 +56,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 30,
+        "p_id" : 30,
         "nombre" : "Tributo Big Mac",
         "categoria" : "hamburguesa",
         "detalle" : "Doble Carne, Cheddar, Lechuga, Pepinillos agridulces, Salsa Big Mac",
@@ -64,7 +64,7 @@ const productos=[
         "disponible": true
     },
     {
-        "id" : 31,
+        "p_id" : 31,
         "nombre" : "Stella",
         "categoria" : "cerveza",
         "detalle" : "Cerveza Stella rubia",

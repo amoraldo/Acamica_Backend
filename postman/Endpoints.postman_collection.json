@@ -37,7 +37,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\" : 2\n}",
+					"raw": "{\n    \"id\" : 23\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,9 +63,21 @@
 		},
 		{
 			"name": "/productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://127.0.0.1:3000/productos",
 					"protocol": "http",
@@ -90,7 +102,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\n        \"indice\": 3,\n        \"usuario\": \"destrada\",\n        \"nombre_apellido\" : \"Diego Estrada\",\n        \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n        \"telefono\": \"2964123456\",\n        \"email\" : \"destrada@gmail.com\",\n        \"password\" : \"password111\"\n    }",
+					"raw": "    {\n        \"id\": 23,\n        \"u_id\": 34,\n        \"usuario\": \"destrada3\",\n        \"nombre_apellido\" : \"Diego56 Estrada\",\n        \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n        \"telefono\": \"2964123456\",\n        \"email\" : \"destrada@gmail.com\",\n        \"password\" : \"password111\"\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,7 +133,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"indice\" : 1,\n    \"nombre\" : \"Otra cosa\",\n    \"precio\" : \"1252\"\n}",
+					"raw": "    {\n        \"id\" : 23,\n        \"p_id\" : 25,\n        \"nombre\" : \"Mozzarella\",\n        \"categoria\" : \"pizza\",\n        \"detalle\" : \"Salsa de tomate, Mozzarella, Olivas negras\",\n        \"precio\" : 6534,\n        \"otro campo ignorado\": \"que tenga lo que quiera\",\n        \"disponible\": true\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,7 +164,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"indice\" : 2\n}",
+					"raw": "{\n    \"id\" : 23,\n    \"u_id\" : 34\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,7 +195,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"indice\": 4\n}",
+					"raw": "{\n    \"id\": 23,\n    \"p_id\": 26\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -214,7 +226,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombre\":\"mates\",\n    \"precio\":\"1020\"\n}",
+					"raw": "    {\n        \"id\": 23,\n        \"p_id\" : 37,\n        \"nombre\" : \"Tributo BigMac2\",\n        \"categoria\" : \"hamburgue1sa\",\n        \"detalle\" : \"Doble C1arne, Cheddar, Lechuga, Pepinillos agridulces, Salsa Big Mac\",\n        \"precio\" : 7100,\n        \"disponible\": false\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -245,7 +257,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"12\",\n    \"usuario\": \"diego3\",\n    \"nombre_apellido\" : \"Diego Estrada\",\n    \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n    \"telefono\": \"2964123456\",\n    \"email\" : \"diego2@g3mail.com\",\n    \"password\" : \"password111\",\n    \"repass\" : \"password111\"\n}",
+					"raw": "{\n    \"id\": \"12\",\n    \"usuario\": \"di2ego3\",\n    \"nombre_apellido\" : \"Diego Estrada\",\n    \"direccion\": \"Almafuerte 2550. Rio Grande. CP9420. Argentina\",\n    \"telefono\": \"2964123456\",\n    \"email\" : \"diego12@g3mail.com\",\n    \"password\" : \"password111\",\n    \"repass\" : \"password111\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -276,7 +288,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"usuario_email\" : \"amoraldo@gmail.com\",\n    \"password\" : \"andres@1212\"\n}",
+					"raw": "{\n    \"usuario_email\" : \"villa1255\",\n    \"password\" : \"1212alpha\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

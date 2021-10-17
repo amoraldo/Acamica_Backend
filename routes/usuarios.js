@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const usuarios = require('../models/usuarios');
-const { validar_admin, validar_usuario, validar_login, validar_registro } = require("../middlewares/usuarios");
+const { validar_admin, buscar_indice_usuario, validar_login, validar_registro } = require("../middlewares/usuarios");
   
 
   router.get('/', validar_admin,  function (req, res) {  // datos de usuario, solo como admin
@@ -25,9 +25,11 @@ const { validar_admin, validar_usuario, validar_login, validar_registro } = requ
     res.send('usuario Creado')
   })
 
-  router.put('/', validar_admin, function (req, res) { //actualizar usuario
-  // Aun no implementada
+  router.put('/', validar_admin, buscar_indice_usuario, function (req, res) { //actualizar usuario
     console.log("put /usuarios")
+    if (usuarios[req.body.indice].admin == true){
+      return res.status(500).json({"mensaje" : "No se permiten borrar Usuarios administradores"})
+    }
     if("nombre_apellido" in req.body && req.body.nombre_apellido.length != 0){
       usuarios[req.body.indice].nombre_apellido = req.body.nombre_apellido;
     }
@@ -49,8 +51,11 @@ const { validar_admin, validar_usuario, validar_login, validar_registro } = requ
     res.send('Usuario Actualizado')
   })
 
-  router.delete('/', validar_admin, function (req, res) {  // eliminar un usuario
+  router.delete('/', validar_admin, buscar_indice_usuario, function (req, res) {  // eliminar un usuario
     console.log("delete /usuarios")
+    if (usuarios[req.body.indice].admin == true){
+      return res.status(500).json({"mensaje" : "No se permiten borrar Usuarios administradores"})
+    }
     usuarios.splice(req.body.indice,1);
     res.send('Usuario Eliminado')
   })

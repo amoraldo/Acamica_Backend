@@ -10,7 +10,7 @@ const usuarios=[ //usuario, nombre_apellido, email, telefono, direccion, contras
         "admin" : false
     },
     {
-        "id": "2",
+        "id": "23",
         "usuario": "amoraldo",
         "nombre_apellido" : "Andres Moraldo",
         "direccion": "Pasaje Azcuenaga 1636. Rio Grande. CP9420. Argentina",
@@ -20,7 +20,7 @@ const usuarios=[ //usuario, nombre_apellido, email, telefono, direccion, contras
         "admin" : true
     },
     {
-        "id": "3",
+        "id": "34",
         "usuario": "villa1255",
         "nombre_apellido" : "Juan Villanueva",
         "direccion": "Estrada 1822. Rio Grande. CP9420. Argentina",

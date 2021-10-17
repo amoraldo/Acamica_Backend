@@ -12,13 +12,31 @@ function validar_admin(req,res,next){
   else{
     for(let elementID in usuarios){
       if (req.body.id == usuarios[elementID].id && usuarios[elementID].admin==true){
-//        req.body.id=usuarios[elementID].id
         next()
         return    
       }    
     }
   }
   return res.status(500).json({"mensaje" : "El ID no permite esta accion"});
+}
+
+function buscar_indice_usuario(req,res,next){
+  console.log("paso por buscar_indice_usuario")
+  if(!("u_id" in req.body)){
+    return res.status(500).json({"mensaje" : "Debe completar todos los campos"});
+  }
+  if((req.body.u_id).length === 0 ){
+    return res.status(500).json({"mensaje" : "Debe completar todos los campos"});
+  }
+  for(let elementID in usuarios){
+    if (req.body.u_id == usuarios[elementID].id){
+      req.body.indice = elementID
+      console.log("u_id: " + req.body.u_id + ", indice: " + req.body.indice)
+      next()
+      return    
+    }
+  }
+  return res.status(500).json({"mensaje" : "No existe el u_id indicado"});
 }
 
 function validar_usuario(req,res,next){
@@ -48,7 +66,7 @@ function validar_login(req,res,next){
       }   
     }
   }
-  return res.status(500).json({"mensaje" : "El usuario no exite"});
+  return res.status(500).json({"mensaje" : "Login incorrecto"});
 }
 
 function validar_registro(req, res, next){
@@ -90,17 +108,6 @@ function validar_registro(req, res, next){
     }
   }
 
-  /*
-  usuarios.forEach(element => {
-    console.log(element.id)
-    if (req.body.usuario == element.usuario || req.body.email == element.email){
-      return res.status(500).json({"mensaje" : "Usuario ya registrado. Utilice Login para entrar a la plataforma"})
-    }
-    if (req.body.id == element.id){
-      return res.status(500).json({"mensaje" : "Id de usuario ya registrado."})
-    }
-  })
-*/
   // Verifico email valido
   if(!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/).test(req.body.email)){
     return res.status(500).json({"mensaje" : "Ingrese un email valido"})
@@ -127,4 +134,4 @@ function validar_registro(req, res, next){
 
   next()
 }
-module.exports = { validar_admin, validar_usuario, validar_login, validar_registro }
+module.exports = { validar_admin, validar_usuario, validar_login, validar_registro, buscar_indice_usuario }
